@@ -13,7 +13,7 @@
 p {
 	font-size: 14px;
 	line-height: 22.4px;
-	color: #ffffff;
+	color: #6c7279;
 }
 h1 {
 	font-size: 65px;
@@ -190,30 +190,9 @@ ul li {
 	-webkit-transition-property: -webkit-transform;
 	transition-property: transform;
 }
-.nav-toggle:before {
-	background-color: #e84545;
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-moz-transition-duration: 0.3s;
-	-o-transition-duration: 0.3s;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-}
-.nav-toggle:after {
-	background-color: #e84545;
-	-moz-transform: scale(0);
-	-ms-transform: scale(0);
-	-webkit-transform: scale(0);
-	transform: scale(0);
-	-moz-transition-duration: 0s;
-	-o-transition-duration: 0s;
-	-webkit-transition-duration: 0s;
-	transition-duration: 0s;
-}
+
 .nav-toggle span {
-	background-color: #fff;
+	background-color: #000;
 	bottom: auto;
 	display: inline-block;
 	height: 3px;
