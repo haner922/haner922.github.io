@@ -17,6 +17,9 @@
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/uikit.min.css" />
+<script src="js/uikit.min.js"></script>
+<script src="js/uikit-icons.min.js"></script>
 </head>
 
 <body>
@@ -44,17 +47,20 @@
     <div class="row">
       <div class="col-md-7 work-detail-margin detail-image">
         <div class="work-image">
-          <p> <img src="images/portfolio/work-3.jpg"></p>
-          <p> <img src="images/work3/11.jpg"></p>
-          <p> <img src="images/work3/10.jpg"></p>
+
+          <div uk-lightbox>
+            <a href="images/portfolio/work-3.jpg" data-uk-lightbox title=""><img src="images/portfolio/work-3.jpg"></a> <br> <br>
+            <a href="images/work3/11.jpg" data-uk-lightbox title=""><img src="images/work3/11.jpg"></a> <br> <br>
+            <a href="images/work3/10.jpg" data-uk-lightbox title=""><img src="images/work3/10.jpg"></a> <br> <br>
+            
+          </div>
           
            <!-- Slideshow -->
           <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active"> <img src="images/work3/1.jpg" alt="Chania"></div>
-              <div class="item"> <img src="images/work3/2.jpg" alt="Chania"></div>
-              <div class="item"> <img src="images/work3/3.jpg" alt="Chania"></div>
+
             </div>
             <!-- Controls --> 
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span></a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span></a>
@@ -79,18 +85,19 @@
               <div class="item"> <img src="images/work3/7.jpg" alt="Chania"></div>
               <div class="item"> <img src="images/work3/8.jpg" alt="Chania"></div>
             </div>
+            
             <!-- Controls --> 
             <a class="left carousel-control" href="#myCarousel3" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span></a> <a class="right carousel-control" href="#myCarousel3" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span></a>
           </div>
-
-          <p> <img src="images/work3/9.jpg"></p>
-          <p> <img src="images/work3/12.jpg"></p>
-          <p> <img src="images/work3/13.jpg"></p>
-          <p> <img src="images/work3/14.jpg"></p>
-          <p> <img src="images/work3/15.jpg"></p>
-          <p> <img src="images/work3/16.jpg"></p>
-          <p> <img src="images/work3/17.jpg"></p>
-
+          <div uk-lightbox>
+            <a href="images/work3/9.jpg" data-uk-lightbox title=""><img src="images/work3/9.jpg"></a> <br> <br>
+            <a href="images/work3/12.jpg" data-uk-lightbox title=""><img src="images/work3/12.jpg"></a> <br> <br>
+            <a href="images/work3/13.jpg" data-uk-lightbox title=""><img src="images/work3/13.jpg"></a> <br> <br>
+            <a href="images/work3/14.jpg" data-uk-lightbox title=""><img src="images/work3/14.jpg"></a> <br> <br>
+            <a href="images/work3/15.jpg" data-uk-lightbox title=""><img src="images/work3/15.jpg"></a> <br> <br>
+            <a href="images/work3/16.jpg" data-uk-lightbox title=""><img src="images/work3/16.jpg"></a>
+            
+          </div>
 
         </div>
       </div>
@@ -98,21 +105,19 @@
         <div class="detail-content">
           <h4>Vine Brothers</h4>
           
-          <h6>Wine branding & packaging design</h6>
-          <h6>UX, Product, Service Design</h6>
-          <h6>Korea University | 2015</h6>
-          <h6>Role: Team Leader</h6>
+          <h6>Wine branding & packaging design<br>
+          UX, Product, Service Design<br>
+          Korea University | 2015<br>
+          Role: Team Leader</h6>
           
           <p>Vine Brothers is a professional wine bar, aiming to provide a better wine experience, especially to people who are new to wine. By offering stylish and witty information graphics about the selected wines, customers can easily choose a wine that matches their individual preferences. Also, the ‘wine tasting system’ and the ‘take-out system’ allow people to enjoy their favorite wine at anytime, anywhere. Through the slide-out mechanism, the bottle and the tasting strip are held in place, while customers can see the label.</p>
           <a class="btn" href="https://ifworlddesignguide.com/search?search=vine%20brothers#/page/entry/187959-vine-brothers/" target="_blank">iF Design Award <i class="fa fa-long-arrow-right"></i></a>
            <br><br><br><br>
           <h5>Design Concept</h5>
           <p>Vine Brothers is based on a modification of an actual cafe that 20's enjoy (Bean Brothers). Brand strategy redesigned as a wine serving scenario, a professional sommelier at Vine Brothers will recommend and sell wine in bottles, glasses, and flasks.</p>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          
+          <br><br><br><br><br><br><br><br><br><br><br><br><br>          
           <h5>Elements</h5>
           <p>Bottle, Glass (to go), Tasting tube, Glass (for stay)</p>
-          <br><br><br>
           <h5>Design Language</h5>
           <br>
           <u><h5>Slot</h5></u>
@@ -120,30 +125,30 @@
           <br>
           <u><h5>Polygon Symbol</h5></u>
           <p>Each wine is labeled a shape such as circle, hexagon etc. These shapes represent the fullness of wine, depending on how many edges it has. (Circle has light body, Hexagon has comparatively full body)  </p>
-          <br><br><br><br><br>
+          <br><br><br>
           <h5>Bottle to go</h5>
           <p>Slide in, and take the bottle easily and safely.The protruding label around the bottle not only shows information, but also holds the item in place in a package. It can also be used to lay the bottle still.</p>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           <h5>Glass to go</h5>
           <p>Glass to go is for people who wants just one glass of wine and wants to enjoy it somewhere else. The cork lid on the cup also serves as a coaster when enjoying wine. </p>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           <h5>Tasting</h5>
           <p>You never know if you love or hate the wine before opening the whole bottle. People can come and purchase small amount of wine to taste before choosing the right wine. The wooden rack holds the tasting tubes in place with the labels showing.</p>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           <h5>Glass for stay</h5>
           <p>Enjoy wine at the bar with the witty coaster that shows information about your wine.</p>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           <h5>Sketch</h5>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           <h5>3D Rendered model</h5>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           <h5>Wood working & mock up production</h5>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <h6>Team: Hyojin Kim</h6>
-          <h6>Advisor: Prof. Minsung Kwon</h6>
-          <h6>UX, Package Design</h6>
-          <h6>2015 | Product Systen Design</h6>
-          <h6>Industrial & Information Design | Korea University</h6>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <h6>Team: Hyojin Kim<br>
+          Advisor: Prof. Minsung Kwon<br>
+          UX, Package Design<br>
+          2015 | Product Systen Design<br>
+          Industrial & Information Design | Korea University</h6>
            </div>
       </div>
     </div>
