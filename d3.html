@@ -13,6 +13,7 @@ label {
   display: block;
 }
 
+
 </style>
 
 <!--html footer html footerhtml footerhtml footerhtml footerhtml footer -->
@@ -67,29 +68,35 @@ label {
       <a href="#" class="nav-toggle">Menu<span></span></a> </div>
   </header>
 
-
+<!-- <body style="background-color:#202020;"> -->
+  <div style="background-color:#202020;color:white;padding:200px">
+ 
 
 <form>
   <br><br><br><br><br><br><br><br>
-  <label><input type="radio" name="mode" value="stacked" checked> Activity Tracker</label>
-  <label><input type="radio" name="mode" value="stacked" checked> Walk</label>
+  <!-- <label><input type="radio" name="mode" value="stacked" checked> Activity Tracker</label>
+  <label><input type="radio" name="mode" value="stacked" checked> Walk</label> -->
   <label><input type="radio" name="mode" value="grouped"> Grouped</label>
   <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
 </form>
-<br><br><br><br><br><br><br><br>
+
 <svg width="960" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-var n = 6, // The number of series.
-    m = 51; // The number of values per series.
+var n = 3, // The number of series.
+    m = 50; // The number of values per series.
 
 // The xz array has m elements, representing the x-values shared by all series.
 // The yz array has n elements, representing the y-values of each of the n series.
 // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
 // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
-var xz = d3.range(m),
-    yz = d3.range(n).map(function() { return bumps(m); }),
+    var yz = [
+                [92, 99, 61, 29, 100, 77,  91,  30,  43,  29,  89,  28,  13,  99,  72,  10,  53,  26,  17,  93,  55,  11,  71,  13,  86,  36,  4, 22 , 19,  58 , 65,  77,  12,  23,  6 ,27 , 57 , 39 , 27 , 50 , 30 , 28,  33,  59,  47 , 19 , 47 , 79 , 62 , 72],
+                [1, 1, 1, 29, 1, 77,  91,  30,  43,  29,  1,  28,  13,  99,  72,  10,  53,  26,  17,  93,  55,  1,  71,  13,  86,  36,  4, 22 , 19,  58 , 65,  77,  12,  23,  6 ,27 , 57 , 39 , 27 , 50 , 1 , 28,  33,  59,  47 , 19 , 47 , 79 , 1 , 72],
+                [1, 1, 1, 29, 1, 77,  91,  30,  43,  29,  1,  28,  13,  99,  72,  10,  53,  26,  17,  93,  55,  1,  71,  13,  86,  36,  4, 22 , 19,  58 , 65,  77,  12,  23,  6 ,27 , 57 , 39 , 27 , 50 , 1 , 28,  33,  59,  47 , 19 , 47 , 79 , 1 , 72]
+            ];
+    var xz = d3.range(m),
     y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
     yMax = d3.max(yz, function(y) { return d3.max(y); }),
     y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
@@ -179,35 +186,117 @@ function transitionStacked() {
       .attr("width", x.bandwidth());
 }
 
+
 // Returns an array of m psuedorandom, smoothly-varying non-negative numbers.
 // Inspired by Lee Byron’s test data generator.
 // http://leebyron.com/streamgraph/
-function bumps(m) {
-  var values = [], i, j, w, x, y, z;
+// function bumps_1(m) {
+//   var values = [], i, j;
+//   var values2 = []
 
-  // Initialize with uniform random values in [0.1, 0.2).
-  for (i = 0; i < m; ++i) {
-    values[i] = 0.1 + 0.1 * Math.random();
-  }
+//   for (i = 0; i < m; ++i) {
+//     values = [92, 99, 61, 29, 100, 77,  91,  30,  43,  29,  89,  28,  13,  99,  72,  10,  53,  26,  17,  93,  55,  11,  71,  13,  86,  36,  4, 22 , 19,  58 , 65,  77,  12,  23,  6 ,27 , 57 , 39 , 27 , 50 , 30 , 28,  33,  59,  47 , 19 , 47 , 79 , 62 , 72];
+//   }
+//   for (j = 0; j < m; ++j) {
+//     values2 = [1, 1, 1, 29, 1, 77,  91,  30,  43,  29,  1,  28,  13,  99,  72,  10,  53,  26,  17,  93,  55,  1,  71,  13,  86,  36,  4, 22 , 19,  58 , 65,  77,  12,  23,  6 ,27 , 57 , 39 , 27 , 50 , 1 , 28,  33,  59,  47 , 19 , 47 , 79 , 1 , 72];
+//   }
+//   return values;
 
-  // Add five random bumps.
-  for (j = 0; j < 5; ++j) {
-    x = 1 / (0.1 + Math.random());
-    y = 2 * Math.random() - 0.5;
-    z = 10 / (0.1 + Math.random());
-    for (i = 0; i < m; i++) {
-      w = (i / m - y) * z;
-      values[i] += x * Math.exp(-w * w);
-    }
-  }
+// }
 
-  // Ensure all values are positive.
-  for (i = 0; i < m; ++i) {
-    values[i] = Math.max(0, values[i]);
-  }
+// function bumps_2(m) {
+//   var values = [], i;
+//   for (i = 0; i < m; ++i) {
+//     values = [1, 1, 1, 29, 1, 77,  91,  30,  43,  29,  1,  28,  13,  99,  72,  10,  53,  26,  17,  93,  55,  1,  71,  13,  86,  36,  4, 22 , 19,  58 , 65,  77,  12,  23,  6 ,27 , 57 , 39 , 27 , 50 , 1 , 28,  33,  59,  47 , 19 , 47 , 79 , 1 , 72];
+//   }
+  
+//   return values;
 
-  return values;
-}
-
+// }
 
 </script>
+
+<style>
+  .state{
+    fill: none;
+    stroke: #a9a9a9;
+    stroke-width: 1;
+  }
+  .state:hover{
+    fill-opacity:0.5;
+  }
+  #tooltip {   
+    position: absolute;           
+    text-align: center;
+    padding: 20px;             
+    margin: 10px;
+    font: 12px sans-serif;        
+    background: lightsteelblue;   
+    border: 1px;      
+    border-radius: 2px;           
+    pointer-events: none;         
+  }
+  #tooltip h4{
+    margin:0;
+    font-size:14px;
+  }
+  #tooltip{
+    background:rgba(0,0,0,0.9);
+    border:1px solid grey;
+    border-radius:5px;
+    font-size:12px;
+    width:auto;
+    padding:4px;
+    color:white;
+    opacity:0;
+  }
+  #tooltip table{
+    table-layout:fixed;
+  }
+  #tooltip tr td{
+    padding:0;
+    margin:0;
+  }
+  #tooltip tr td:nth-child(1){
+    width:50px;
+  }
+  #tooltip tr td:nth-child(2){
+    text-align:center;
+  }
+</style>
+<body>
+<div id="tooltip"></div><!-- div to hold tooltip. -->
+<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+<script src="uStates.js"></script> <!-- creates uStates. -->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+  function tooltipHtml(n, d){ /* function to create html content string in tooltip div. */
+    return "<h4>"+n+"</h4><table>"+
+      "<tr><td>Low</td><td>"+(d.low)+"</td></tr>"+
+      "<tr><td>Average</td><td>"+(d.avg)+"</td></tr>"+
+      "<tr><td>High</td><td>"+(d.high)+"</td></tr>"+
+      "</table>";
+  }
+  
+  var sampleData ={}; /* Sample random data. */ 
+  ["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
+  "ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH", 
+  "MI", "WY", "MT", "ID", "WA", "DC", "TX", "CA", "AZ", "NV", "UT", 
+  "CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
+  "WI", "MO", "AR", "OK", "KS", "LS", "VA"]
+    .forEach(function(d){ 
+      var low=Math.round(100*Math.random()), 
+        mid=Math.round(100*Math.random()), 
+        high=Math.round(100*Math.random());
+      sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]), 
+          avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)}; 
+    });
+  
+  /* draw states on id #statesvg */ 
+  uStates.draw("#statesvg", sampleData, tooltipHtml);
+  
+  d3.select(self.frameElement).style("height", "600px"); 
+</script>
+
+</body>
