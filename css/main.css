@@ -40,6 +40,7 @@ h5 {
 }
 .btn {
 	background-color: #333;
+	max-height: 40px;
 	margin-top: 40px;
 	color: #fff;
 	font-size: 12px;
@@ -531,4 +532,57 @@ ul li {
 	margin-top: 7%;
 }
 
+/*----
+padding
+----*/
+
+.page-content {
+  margin: 0 auto;
+  max-width: 850px;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+.page-content img {
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .page-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.page-content .mb0 {
+  margin-bottom: 0;
+}
+.page-content .meta {
+  margin-bottom: 20px;
+}
+.page-content .meta span {
+  color: #bfbfbf;
+}
+.page-content .meta a {
+  color: #bfbfbf;
+}
+.page-content .meta a:hover, .page-content .meta a:active, .page-content .meta a:focus {
+  color: #000 !important;
+}
+@media screen and (max-width: 480px) {
+  .page-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+#grey {
+  border: 1px dotted black;
+  background: transparent;
+  text-align: center;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  box-shadow:10px 10px #f0f0f0;  
+
+}
 
