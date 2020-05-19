@@ -40,7 +40,6 @@ h5 {
 }
 .btn {
 	background-color: #333;
-	max-height: 40px;
 	margin-top: 40px;
 	color: #fff;
 	font-size: 12px;
@@ -598,3 +597,5 @@ padding
   display: table;
   clear: both;
 }
+
+
