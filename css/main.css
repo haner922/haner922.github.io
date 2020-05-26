@@ -12,7 +12,7 @@
 p {
 	font-size: 14px;
 	line-height: 22.4px;
-	color: #ababab;
+	color: #666;
 }
 h1 {
 	font-size: 65px;
@@ -588,7 +588,8 @@ padding
 .column {
   float: left;
   width: 50%;
-  padding-right: 50px ;
+  padding-left: 15px;
+  padding-right: 15px ;
 }
 
 /* Clear floats after the columns */
