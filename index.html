@@ -13,6 +13,11 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-110307527-1');
+
+  function notion(url_str){
+    console.log(url_str);
+    $('#portfolio').load(url_str);
+  }
 </script>
 
 <meta charset="utf-8">
@@ -87,7 +92,7 @@
         </div>
         <img src="images/portfolio/work-1.jpg" class="img-responsive" alt=""> </a> </div>
     
-      <div class="col-sm-6 portfolio-item"> <a href="https://shiny-growth-354.notion.site/WELT-6c086a8aa1004e7090e51e69f0343752" class="portfolio-link">
+      <div class="col-sm-6 portfolio-item"><a href="javascript:notion('https://shiny-growth-354.notion.site/WELT-6c086a8aa1004e7090e51e69f0343752');" class="portfolio-link">
         <div class="caption">
           <div class="caption-content">
             <h3>CADY</h3>
